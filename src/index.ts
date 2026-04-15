@@ -3,6 +3,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 import { AddressPennyClient } from "./client.js";
+import { shapeMany, shapeSingle } from "./shape.js";
 
 const API_KEY = process.env.ADDRESSPENNY_API_KEY;
 const ACCOUNT_ID = process.env.ADDRESSPENNY_ACCOUNT_ID;
@@ -46,7 +47,7 @@ server.registerTool(
     try {
       const result = await client.validateAddress(address);
       return {
-        content: [{ type: "text", text: JSON.stringify(result, null, 2) }],
+        content: [{ type: "text", text: JSON.stringify(shapeSingle(result), null, 2) }],
       };
     } catch (error) {
       return errorResult(error);
@@ -71,7 +72,7 @@ server.registerTool(
     try {
       const result = await client.bulkValidate(addresses);
       return {
-        content: [{ type: "text", text: JSON.stringify(result, null, 2) }],
+        content: [{ type: "text", text: JSON.stringify(shapeMany(result), null, 2) }],
       };
     } catch (error) {
       return errorResult(error);
@@ -95,7 +96,7 @@ server.registerTool(
     try {
       const result = await client.parseAndValidate(text);
       return {
-        content: [{ type: "text", text: JSON.stringify(result, null, 2) }],
+        content: [{ type: "text", text: JSON.stringify(shapeMany(result), null, 2) }],
       };
     } catch (error) {
       return errorResult(error);
