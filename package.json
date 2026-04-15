@@ -1,6 +1,6 @@
 {
   "name": "@addresspenny/mcp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Model Context Protocol server for AddressPenny address validation",
   "type": "module",
   "bin": {
@@ -15,6 +15,7 @@
     "build": "tsc && chmod 755 build/index.js",
     "start": "node build/index.js",
     "typecheck": "tsc --noEmit",
+    "pack:dxt": "node scripts/build-dxt.mjs",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
@@ -22,6 +23,7 @@
     "zod": "^3.23.0"
   },
   "devDependencies": {
+    "@anthropic-ai/dxt": "^0.2.6",
     "@types/node": "^22.0.0",
     "typescript": "^5.5.0"
   },

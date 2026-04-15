@@ -1,5 +1,7 @@
 node_modules/
 build/
+dxt-build/
+dist/
 *.log
 .DS_Store
 .env

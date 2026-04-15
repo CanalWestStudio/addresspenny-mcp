@@ -1,0 +1,76 @@
+{
+  "dxt_version": "0.1",
+  "name": "addresspenny",
+  "display_name": "AddressPenny",
+  "version": "0.1.2",
+  "description": "Validate, bulk-clean, and extract postal addresses through AddressPenny.",
+  "long_description": "The AddressPenny extension exposes three tools to your AI agent: validate_address for a single postal address, bulk_validate for up to 100 addresses at once, and parse_and_validate for pulling addresses out of freeform text. Each validated address costs one credit; billing happens through your AddressPenny account. Get an API token at https://addresspenny.com.",
+  "author": {
+    "name": "AddressPenny",
+    "url": "https://addresspenny.com"
+  },
+  "homepage": "https://addresspenny.com/ai",
+  "documentation": "https://addresspenny.com/developers/api_guides/mcp",
+  "support": "https://github.com/CanalWestStudio/addresspenny-mcp/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CanalWestStudio/addresspenny-mcp"
+  },
+  "license": "MIT",
+  "keywords": ["address", "validation", "mcp", "postal"],
+  "server": {
+    "type": "node",
+    "entry_point": "build/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/build/index.js"],
+      "env": {
+        "ADDRESSPENNY_API_KEY": "${user_config.api_key}",
+        "ADDRESSPENNY_ACCOUNT_ID": "${user_config.account_id}",
+        "ADDRESSPENNY_API_URL": "${user_config.api_url}"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "validate_address",
+      "description": "Validate a single postal address."
+    },
+    {
+      "name": "bulk_validate",
+      "description": "Validate up to 100 addresses in one request."
+    },
+    {
+      "name": "parse_and_validate",
+      "description": "Extract and validate addresses from freeform text."
+    }
+  ],
+  "user_config": {
+    "api_key": {
+      "type": "string",
+      "title": "API Token",
+      "description": "Your AddressPenny API token. Create one at https://addresspenny.com/developers/api_tokens with the addresses:write scope.",
+      "sensitive": true,
+      "required": true
+    },
+    "account_id": {
+      "type": "string",
+      "title": "Account ID",
+      "description": "Your AddressPenny account prefix ID, e.g. acct_abc123. Find it on your MCP setup page at https://addresspenny.com/developers/mcp.",
+      "required": true
+    },
+    "api_url": {
+      "type": "string",
+      "title": "API Base URL (advanced)",
+      "description": "Override the API endpoint. Leave blank unless pointing at staging or a self-hosted instance.",
+      "default": "https://addresspenny.com/api/v1",
+      "required": false
+    }
+  },
+  "compatibility": {
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "node": ">=18"
+    }
+  }
+}
