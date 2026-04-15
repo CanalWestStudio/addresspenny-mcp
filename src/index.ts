@@ -2,7 +2,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
-import { AddressPennyClient } from "./client.js";
+import { AddresspennyClient } from "./client.js";
 import { shapeMany, shapeSingle } from "./shape.js";
 
 const API_KEY = process.env.ADDRESSPENNY_API_KEY;
@@ -18,13 +18,13 @@ if (!ACCOUNT_ID) {
   process.exit(1);
 }
 
-const client = new AddressPennyClient({ apiKey: API_KEY, accountId: ACCOUNT_ID, baseUrl: API_URL });
+const client = new AddresspennyClient({ apiKey: API_KEY, accountId: ACCOUNT_ID, baseUrl: API_URL });
 
 const server = new McpServer(
   { name: "addresspenny", version: "0.1.0" },
   {
     instructions:
-      "Use these tools to validate postal mailing addresses via AddressPenny. " +
+      "Use these tools to validate postal mailing addresses via Addresspenny. " +
       "Prefer validate_address for a single known address, bulk_validate for a list of known addresses, " +
       "and parse_and_validate when addresses are embedded in freeform text (chats, documents, transcripts). " +
       "All tools return the standardized address and validation metadata when successful.",
@@ -107,7 +107,7 @@ server.registerTool(
 function errorResult(error: unknown) {
   const message = error instanceof Error ? error.message : String(error);
   return {
-    content: [{ type: "text" as const, text: `AddressPenny error: ${message}` }],
+    content: [{ type: "text" as const, text: `Addresspenny error: ${message}` }],
     isError: true,
   };
 }
@@ -115,7 +115,7 @@ function errorResult(error: unknown) {
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error("AddressPenny MCP server running on stdio");
+  console.error("Addresspenny MCP server running on stdio");
 }
 
 main().catch((error) => {

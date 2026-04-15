@@ -1,6 +1,6 @@
 # @addresspenny/mcp
 
-[Model Context Protocol](https://modelcontextprotocol.io) server for [AddressPenny](https://addresspenny.com) address validation. Lets Claude Desktop, Cursor, and any MCP-compatible agent validate postal addresses, bulk-clean lists, and extract addresses from freeform text.
+[Model Context Protocol](https://modelcontextprotocol.io) server for [Addresspenny](https://addresspenny.com) address validation. Lets Claude Desktop, Cursor, and any MCP-compatible agent validate postal addresses, bulk-clean lists, and extract addresses from freeform text.
 
 ## Tools
 
@@ -11,7 +11,7 @@
 ## Requirements
 
 - Node.js 18 or newer
-- An AddressPenny account with an API token and the token's account ID — create both at [addresspenny.com](https://addresspenny.com)
+- An Addresspenny account with an API token and the token's account ID — create both at [addresspenny.com](https://addresspenny.com)
 
 ## Configuration
 
@@ -19,7 +19,7 @@ The server reads three environment variables:
 
 | Variable | Required | Default | Notes |
 | --- | --- | --- | --- |
-| `ADDRESSPENNY_API_KEY` | yes | — | API token from AddressPenny |
+| `ADDRESSPENNY_API_KEY` | yes | — | API token from Addresspenny |
 | `ADDRESSPENNY_ACCOUNT_ID` | yes | — | Prefixed account ID (e.g. `acct_abc123`) |
 | `ADDRESSPENNY_API_URL` | no | `https://addresspenny.com/api/v1` | Override for self-hosted or staging |
 

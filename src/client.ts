@@ -4,7 +4,7 @@ type ClientOptions = {
   baseUrl: string;
 };
 
-export class AddressPennyClient {
+export class AddresspennyClient {
   private readonly apiKey: string;
   private readonly accountId: string;
   private readonly baseUrl: string;

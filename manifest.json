@@ -1,13 +1,13 @@
 {
   "dxt_version": "0.1",
   "name": "addresspenny",
-  "display_name": "AddressPenny",
-  "version": "0.1.3",
-  "description": "Validate, bulk-clean, and extract postal addresses through AddressPenny.",
+  "display_name": "Addresspenny",
+  "version": "0.1.4",
+  "description": "Validate, bulk-clean, and extract postal addresses through Addresspenny.",
   "icon": "icon.png",
-  "long_description": "The AddressPenny extension exposes three tools to your AI agent: validate_address for a single postal address, bulk_validate for up to 100 addresses at once, and parse_and_validate for pulling addresses out of freeform text. Each validated address costs one credit; billing happens through your AddressPenny account. Get an API token at https://addresspenny.com.",
+  "long_description": "The Addresspenny extension exposes three tools to your AI agent: validate_address for a single postal address, bulk_validate for up to 100 addresses at once, and parse_and_validate for pulling addresses out of freeform text. Each validated address costs one credit; billing happens through your Addresspenny account. Get an API token at https://addresspenny.com.",
   "author": {
-    "name": "AddressPenny",
+    "name": "Addresspenny",
     "url": "https://addresspenny.com"
   },
   "homepage": "https://addresspenny.com/ai",
@@ -50,14 +50,14 @@
     "api_key": {
       "type": "string",
       "title": "API Token",
-      "description": "Your AddressPenny API token. Create one at https://addresspenny.com/developers/api_tokens with the addresses:write scope.",
+      "description": "Your Addresspenny API token. Create one at https://addresspenny.com/developers/api_tokens with the addresses:write scope.",
       "sensitive": true,
       "required": true
     },
     "account_id": {
       "type": "string",
       "title": "Account ID",
-      "description": "Your AddressPenny account prefix ID, e.g. acct_abc123. Find it on your MCP setup page at https://addresspenny.com/developers/mcp.",
+      "description": "Your Addresspenny account prefix ID, e.g. acct_abc123. Find it on your MCP setup page at https://addresspenny.com/developers/mcp.",
       "required": true
     },
     "api_url": {

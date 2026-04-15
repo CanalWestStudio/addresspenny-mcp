@@ -1,7 +1,7 @@
 {
   "name": "@addresspenny/mcp",
-  "version": "0.1.3",
-  "description": "Model Context Protocol server for AddressPenny address validation",
+  "version": "0.1.4",
+  "description": "Model Context Protocol server for Addresspenny address validation",
   "type": "module",
   "bin": {
     "addresspenny-mcp": "./build/index.js"
