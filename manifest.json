@@ -2,8 +2,9 @@
   "dxt_version": "0.1",
   "name": "addresspenny",
   "display_name": "AddressPenny",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Validate, bulk-clean, and extract postal addresses through AddressPenny.",
+  "icon": "icon.png",
   "long_description": "The AddressPenny extension exposes three tools to your AI agent: validate_address for a single postal address, bulk_validate for up to 100 addresses at once, and parse_and_validate for pulling addresses out of freeform text. Each validated address costs one credit; billing happens through your AddressPenny account. Get an API token at https://addresspenny.com.",
   "author": {
     "name": "AddressPenny",

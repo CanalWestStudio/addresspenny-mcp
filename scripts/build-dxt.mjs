@@ -19,6 +19,7 @@ mkdirSync(stage, { recursive: true });
 cpSync(join(root, "manifest.json"), join(stage, "manifest.json"));
 cpSync(join(root, "README.md"), join(stage, "README.md"));
 cpSync(join(root, "LICENSE"), join(stage, "LICENSE"));
+cpSync(join(root, "icon.png"), join(stage, "icon.png"));
 cpSync(join(root, "build"), join(stage, "build"), { recursive: true });
 
 const pkg = JSON.parse(readFileSync(join(root, "package.json"), "utf8"));
