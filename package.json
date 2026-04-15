@@ -1,0 +1,44 @@
+{
+  "name": "@addresspenny/mcp",
+  "version": "0.1.0",
+  "description": "Model Context Protocol server for AddressPenny address validation",
+  "type": "module",
+  "bin": {
+    "addresspenny-mcp": "./build/index.js"
+  },
+  "files": [
+    "build",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc && chmod 755 build/index.js",
+    "start": "node build/index.js",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "address",
+    "address-validation",
+    "addresspenny"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CanalWestStudio/addresspenny-mcp.git"
+  },
+  "homepage": "https://addresspenny.com",
+  "license": "MIT"
+}
